@@ -33,4 +33,7 @@ jobs:
       with:
         push: true
         tags: gopi123321/test:1.1
+    - name: azure cli
+      run: az login
+      
     
