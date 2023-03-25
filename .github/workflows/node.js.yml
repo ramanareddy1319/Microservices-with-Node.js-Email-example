@@ -35,11 +35,8 @@ jobs:
         tags: gopi123321/test:1.1
     - name: azure cli
       run: az login
-    - name: Gets K8s context
-      uses: azure/aks-set-context@4e5aec273183a197b181314721843e047123d9fa
-      with:
-          resource-group: "k8s-rg"
-          cluster-name: "test-k8s-cluster"
+    - name: aks setup
+      run: az aks install-cli && az aks get-credentials --resource-group k8s-rg --name test-k8s-cluster
     - uses: azure/k8s-deploy@v1
       with: 
         namespace: default
