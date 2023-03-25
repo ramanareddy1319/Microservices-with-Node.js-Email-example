@@ -4,8 +4,8 @@ metadata:
   finalizers:
   - service.kubernetes.io/load-balancer-cleanup
   labels:
-    app: test
-  name: test
+    app: node-test
+  name: node-test
   namespace: default
 spec:
   allocateLoadBalancerNodePorts: true
@@ -15,5 +15,5 @@ spec:
     protocol: TCP
     targetPort: 8080
   selector:
-    app: test
+    app: node-test
   type: LoadBalancer
